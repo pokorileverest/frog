@@ -1,0 +1,29 @@
+//---------------------------------------------------------------------------
+#include <vcl.h>
+#include <conio.h>
+#include <stdio.h>
+#include <math.h>
+#pragma hdrstop
+//---------------------------------------------------------------------------
+#pragma argsused
+int main(int argc, char* argv[])
+{
+double x,y,z,a,c,u;
+int kod;
+puts("Input z, a, c");
+scanf("%lf%lf%lf",&z, &a, &c);
+if (z<-1) x=(-z)/3;
+else x=fabs(z);
+puts("Function U(x):\n  0 - 2*x\n  1 - x^2\n  2 - x/3");
+scanf("%d", &kod);
+switch(kod){
+   case 0: 	u=x*2;			break;
+   case 1: 	u=pow(x,2);		break;
+   case 2: 	u=x/3;			break;
+}
+y=a*u-log(x+2.5) +c*(exp(x)-exp(-x));
+printf("y = %8.6lf", y);
+puts("\nPress any key ... ");
+getch();
+return 0;
+}
